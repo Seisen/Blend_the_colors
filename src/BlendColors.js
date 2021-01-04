@@ -1,6 +1,7 @@
 //credit https://gist.github.com/JordanDelcros/518396da1c13f75ee057
 // added regex func to convert rgba into list [r,g,b,a]
-export function blendColors(color1,color2) {
+// added function getResult that return the score
+function blendColors(color1,color2) {
 
 // Fast and easy way to combine (additive mode) two RGBA colors with JavaScript.
 // [red, green, blue, alpha] based on these maximul values [255, 255, 255, 1].
@@ -18,4 +19,8 @@ export function blendColors(color1,color2) {
 function rgbaToList(x){
     let rgbRegex =  /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/;
     return x.match(rgbRegex).slice(1).map(Number)
+}
+
+export function getResult(modeNormal,color1,color2,colorMix){
+
 }
