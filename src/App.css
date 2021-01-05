@@ -190,7 +190,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 100%;
     pointer-events: none
 }
-#round-number{
+#round-number,#round-average{
     position: absolute;
     font-family: ME;
     top: 0px;
@@ -198,11 +198,14 @@ input[type=range]::-webkit-slider-thumb {
     z-index:15;
 
 }
-#round-number.R{
+#round-average{
+    top: 40px !important;
+}
+#round-number.R,#round-average.R{
     color: black;
 
 }
-#round-number.N{
+#round-number.N,#round-average.N{
     color: white;
 
 }

@@ -14,3 +14,11 @@ export function get_colors(mode){
         //pass
     }
 }
+export function numAverage(a) {
+    let b = a.length,
+        c = 0, i;
+    for (i = 0; i < b; i++){
+        c += Number(a[i]);
+    }
+    return  Math.round((c/b)*10000)/10000;
+}

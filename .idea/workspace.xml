@@ -5,11 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlendColors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlendColors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NormalMod.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalMod.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReverseMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReverseMode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rounds.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rounds.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609605466165</updated>
-      <workItem from="1609605467261" duration="50224000" />
+      <workItem from="1609605467261" duration="51623000" />
     </task>
     <servers />
   </component>

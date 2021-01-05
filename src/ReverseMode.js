@@ -4,7 +4,7 @@ import ColorPicker from "@radial-color-picker/react-color-picker";
 import {hslToRgb} from "./hslToRgbf";
 
 import '@radial-color-picker/react-color-picker/dist/react-color-picker.min.css';
-import {get_colors} from "./Rounds";
+import {get_colors, numAverage} from "./Rounds";
 import {getResult} from "./BlendColors";
 import {useEffect} from "react";
 
@@ -112,6 +112,8 @@ export function ReverseMode(){
 
             <button id='make-a-guess' className='false' onClick={handleClick} > MAKE A GUESS </button>
             <p id='round-number' className='R'>ROUND : {round}/5</p>
+            <p id='round-average' className='R'>ACCURACY : {numAverage(arr) || 0}  </p>
+
 
             <div id='back'>
                 <div  style={{
