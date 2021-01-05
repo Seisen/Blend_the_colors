@@ -4,8 +4,12 @@
     <list default="true" id="ca72f37f-8354-44eb-a79b-bb98090e1d14" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BlendColors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlendColors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hslToRgbf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hslToRgbf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NormalMod.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalMod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReverseMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReverseMode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +46,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jochi\blend_the_colors\src" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -65,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609605466165</updated>
-      <workItem from="1609605467261" duration="30081000" />
+      <workItem from="1609605467261" duration="50224000" />
     </task>
     <servers />
   </component>

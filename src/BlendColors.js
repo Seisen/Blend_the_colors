@@ -15,6 +15,7 @@ function blendColors(color1,color2) {
     mix[0] = Math.round((added[0] * added[3] / mix[3]) + (base[0] * base[3] * (1 - added[3]) / mix[3]));
     mix[1] = Math.round((added[1] * added[3] / mix[3]) + (base[1] * base[3] * (1 - added[3]) / mix[3]));
     mix[2] = Math.round((added[2] * added[3] / mix[3]) + (base[2] * base[3] * (1 - added[3]) / mix[3]));
+
     return mix
 }
 
@@ -67,14 +68,13 @@ function rgb2lab(rgb){
     return [(116 * y) - 16, 500 * (x - y), 200 * (y - z)]
 }
 
-export function getResult(modeNormal,color1,color2,color0){
+export function getResult(color1,color2,color0){
     /**
-     * @param {boolean} modeNormal if it's the normal mode or not
      * @param {string}  color1 rgba
      * @param {string} color2 rgba
      * @param {string} colorMix rgba
      */
-    let c1 = rgbaToList(blendColors(color1,color2)) ;
+    let c1 = blendColors(color1,color2) ;
     let c2 = rgbaToList(color0);
     let delta = deltaE([c1[0],c1[1],c1[2]],[c2[0],c2[1],c2[2]])
 

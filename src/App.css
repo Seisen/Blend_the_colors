@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'ME';
+    src: url("./Metropolis-ExtraBold.otf");
+}
 html{
     overflow: hidden;
     user-select: none;
@@ -8,12 +12,90 @@ html{
     cursor: pointer;
     -webkit-appearance: none;
     user-select: none;
-    box-shadow: 0 0 20px rgba(0,0,0,.19), 0 0 10px rgba(0,0,0,.24);
+    -webkit-box-shadow: 0px 4px 5px -4px #000000 !important;
+    box-shadow: 0px 4px 5px -4px #000000 !important;
     height: 10px;
     margin-top: 10px;
 
 }
 
+
+#changeMode{
+    z-index: 10;
+    position: absolute;
+    left:0px;
+    bottom:0px;
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    background: transparent;
+    font-family: ME;
+    font-size: 22px;
+    transition:  0.2s;
+    cursor: pointer;
+}
+#changeMode:focus{
+    outline: none;
+}
+#changeMode:hover{
+    transform: scale(1.05,1.05);
+}
+#changeMode.true{
+    color: white;
+    border: 2px dashed white;
+}
+#changeMode.false{
+    color: black;
+    border: 2px dashed black;
+}
+
+#make-a-guess{
+    z-index: 10;
+    position: absolute;
+
+    bottom:0px;
+    margin-bottom: 40px;
+    width: 400px;
+    height: 70px;
+    background: transparent;
+    font-family: ME;
+    font-size: 45px;
+    transition:  0.2s;
+    cursor: pointer;
+}
+#make-a-guess:focus{
+    outline: none;
+}
+#make-a-guess:hover{
+    transform: scale(1.05,1.05);
+}
+#make-a-guess.true{
+    color: white;
+    border: 2px dashed white;
+}
+#make-a-guess.false{
+    color: black;
+    border: 2px dashed black;
+}
+
+#noname{
+    pointer-events: none;
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    top: 37.5%;
+    left: 37.5%;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background-color: red;
+    outline: 0;
+    cursor: pointer;
+    overflow: visible;
+    transform: scale(2.9,2.9);
+
+    z-index: 50;
+}
 
 .leftnull, .rightnull{
     cursor: pointer;
@@ -46,8 +128,8 @@ input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
 .rcp__knob{
-    background: transparent;
-    border: 3px solid white;
+    background: transparent !important;
+    border: 3px solid white !important;
     border-radius: 49px;
 }
 .rcp__knob:hover{
@@ -62,7 +144,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 #color-picker{
     z-index: 5;
-    transform: scale(1.5,1.5);
+    transform: scale(1.6,1.6);
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -85,11 +167,43 @@ input[type=range]::-webkit-slider-thumb {
     width: 100vw;
 
 }
-.rcp__well,.rcp__well:hover{
-    box-shadow: 0 0 20px rgba(0,0,0,.19), 0 0 10px rgba(0,0,0,.24);
+
+.rcp__well{
+    transform: scale(2.9,2.9);
+    border:none !important;
+
+    -webkit-box-shadow: 0px 0px 4px 1px #000000 !important;
+    box-shadow: 0px 0px 4px 1px #000000 !important;
+}
+#logo.N{
+    background-image:url("./svgs/1.png");
+    background-size: contain;
+    z-index: 500;
+    height: 100%;
+    pointer-events: none
 
 }
-.rcp__well:hover{
-    transform: scale(1.05,1.05);
+#logo.R{
+    background-image:url("./svgs/2.png");
+    background-size: contain;
+    z-index: 500;
+    height: 100%;
+    pointer-events: none
+}
+#round-number{
+    position: absolute;
+    font-family: ME;
+    top: 0px;
+    font-size: 27px;
+    z-index:15;
 
 }
+#round-number.R{
+    color: black;
+
+}
+#round-number.N{
+    color: white;
+
+}
+
