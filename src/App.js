@@ -4,9 +4,6 @@ import * as React from "react";
 
 import {NormalMode} from "./NormalMod";
 import {ReverseMode} from "./ReverseMode";
-import {useEffect} from "react";
-
-
 
 
 function App() {
@@ -17,10 +14,8 @@ function App() {
         setmode(prevState => {return(!prevState)})
     };
 
-
     return(
         <>
-
 
             <button className={normalmode.toString()} id='changeMode'  onClick={handleClick}>CHANGE MODE</button>
 
@@ -29,6 +24,5 @@ function App() {
         </>
     );
 };
-
 
 export default App;

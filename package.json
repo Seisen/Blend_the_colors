@@ -12,7 +12,8 @@
     "web-vitals": "^0.2.4",
     "@radial-color-picker/react-color-picker": "",
     "react-bootstrap": "^1.4.0",
-    "randomcolor": "^0.6.2"
+    "randomcolor": "^0.6.2",
+    "firebase": "^8.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
