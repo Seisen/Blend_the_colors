@@ -5,6 +5,7 @@
 html{
     overflow: hidden;
     user-select: none;
+
 }
 #saturationInput,#luminosityInput{
     display: flex;
@@ -180,7 +181,7 @@ input[type=range]::-webkit-slider-thumb {
     background-size: contain;
     z-index: 500;
     height: 100%;
-    pointer-events: none
+    pointer-events: none;
 
 }
 #logo.R{
@@ -209,4 +210,161 @@ input[type=range]::-webkit-slider-thumb {
     color: white;
 
 }
+#accueil{
 
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    color: hsla(324, 70%, 45%,.8);
+    animation: wheelHueColor 20s infinite;
+    background-color: currentColor;
+    flex-direction: column;
+    justify-content: center;
+
+    color: white;
+
+}
+@supports (background-blend-mode: overlay) {
+    #accueil {
+        background-image: linear-gradient(45deg, white 10%, black 85%);
+        background-blend-mode: overlay;
+    }
+}
+@keyframes wheelHueColor {
+    from, to { color: hsla(324, 70%, 45%,.8); }
+    10%      { color: hsla(360, 65%, 45%,.8); }
+    20%      { color: hsla( 36, 80%, 45%,.8); }
+    30%      { color: hsla( 72, 75%, 35%,.8); }
+    40%      { color: hsla(108, 65%, 35%,.8); }
+    50%      { color: hsla(144, 75%, 35%,.8); }
+    60%      { color: hsla(180, 75%, 35%,.8); }
+    70%      { color: hsla(216, 60%, 45%,.8); }
+    80%      { color: hsla(252, 65%, 50%,.8); }
+    90%      { color: hsla(288, 60%, 40%,.8); }
+}
+
+.sign-in{
+    opacity: 0.8;
+    display: flex;
+    align-self: center;
+    width: 20vw;
+    height: 35px;
+    font-family: ME;
+    line-height: 30px;
+    justify-content: center;
+    margin: 10px;
+    background: #000000;
+    color: hsl(324, 70%, 45%);
+    animation: wheelHueColor 20s infinite;;
+    font-size: 20px;
+    border: none;
+    transition: transform,opacity .2s;
+    -webkit-box-shadow: 9px -6px 20px -5px #000000;
+    box-shadow: 9px -6px 20px -5px #000000;
+}
+.sign-in.t{
+    margin-top: 250px;
+}
+.sign-in:hover{
+    opacity: 1;
+    cursor: pointer;
+
+    transform: scale(1.05,1.05);
+}
+#lg{
+    pointer-events: none;
+    z-index: 15;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("./svgs/1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top:-18%;
+    background-position-x: center;
+}
+
+
+#form-accueil{
+    display: flex;
+    flex-direction: column;
+    margin-top: 300px;
+    width: 100vw;
+
+}
+#form-accueil input{
+    display: flex;
+    align-self: center;
+    width: 30vw;
+    height: 45px;
+    font-family: ME;
+    line-height: 30px;
+    font-size: 30px;
+    border: 2px dashed white;
+    background-color: rgba(0,0,0,.05);
+    text-align:center;
+    outline: none;
+    transition: transform .2s;
+    box-shadow: 9px -6px 20px -5px #000000;
+
+
+}
+#form-accueil input::placeholder{
+    color: #222222;
+}
+#form-accueil input:focus{
+    transform: scale(1.05,1.05);
+}
+#form-accueil button{
+    margin-top: 30px;
+    opacity: 0.8;
+    display: flex;
+    align-self: center;
+    width: 26vw;
+    height: 45px;
+    font-family: ME;
+    line-height: 42px;
+    justify-content: center;
+
+    background: white;
+    color: hsl(324, 70%, 45%);
+    animation: wheelHueColor 20s infinite;;
+    font-size: 30px;
+    border: none;
+    transition: transform,opacity .2s;
+    -webkit-box-shadow: 9px -6px 20px -5px #000000;
+    box-shadow: 9px -6px 20px -5px #000000;
+
+
+}
+#form-accueil button:hover{
+    opacity: 1;
+    cursor: pointer;
+
+    transform: scale(1.05,1.05);
+}
+.sign-out{
+    z-index: 150;
+    position: absolute;
+    right:0px;
+    bottom:0px;
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    background: transparent;
+    font-family: ME;
+    font-size: 22px;
+    transition:  0.2s;
+    cursor: pointer;
+    color: white;
+    border: 2px dashed white;
+}
+.sign-out:focus{
+    outline: none;
+}
+.sign-out:hover{
+    transform: scale(1.05,1.05);
+}

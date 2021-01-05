@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
-import 'react-confirm-alert/src/react-confirm-alert.css';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import {Accordion, Card} from "react-bootstrap";
@@ -23,49 +23,30 @@ const firestore = firebase.firestore();
 
 export function SignIn() {
 
-    const signInWithGoogle = () => {
+    const SignInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         auth.signInWithPopup(provider);
 
     }
-    const signInWithFb = () => {
+    const SignInWithFb = () => {
         const provider = new firebase.auth.FacebookAuthProvider();
         auth.signInWithPopup(provider);
 
+
     }
+
     return(
         <>
-            <button className="sign-in" onClick={signInWithGoogle}>Sign in with google</button>
-            <button className="sign-in" onClick={signInWithFb}>Sign in with facebook</button>
+            <button className="sign-in t" onClick={SignInWithGoogle}>Sign in with google</button>
+            <button className="sign-in" onClick={SignInWithFb}>Sign in with facebook</button>
         </>
     );
 }
 export function SignOut() {
     return auth.currentUser && (
-        <button  className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+        <button  className="sign-out" onClick={() => auth.signOut()}>SIGN OUT</button>
+
     )
-}
-export function GetName(){
-    const [user] = useAuthState(auth);
-    let name;
-    const getName = () => {firestore.collection('users').doc(user.uid).get().then((doc) => {
-        if (doc.exists)
-            name = doc.data()['name'];
-    })}
-    getName();
-    return name || undefined;
-}
-export function SetName(name){
-    const [user] = useAuthState(auth);
-    const addName = () => {firestore.collection('users').doc(user.uid).get().then((doc) => {
-        if (!doc.exists){
-            const addd = () => {
-                firestore.collection('users').doc(user.uid).set({name:name});
-            }
-            addd();
-        }
-    })}
-    addName();
 }
 
 export function UpdateBestScore(acc, mode){
@@ -120,7 +101,7 @@ export function ScoreBoard(props){
     </Accordion>
     )
 
-//
+
 }
 function Scores (props) {
     const { name, bestScoreN, bestScoreR  } = props.bestScores;
