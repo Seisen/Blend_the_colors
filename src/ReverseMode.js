@@ -6,10 +6,16 @@ import {hslToRgb} from "./hslToRgbf";
 import '@radial-color-picker/react-color-picker/dist/react-color-picker.min.css';
 import {get_colors, numAverage} from "./Rounds";
 import {getResult} from "./BlendColors";
-import {useEffect} from "react";
-
+import {useEffect, useState} from "react";
+import {useAuthState} from "react-firebase-hooks/auth";
+import firebase from "firebase";
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 
 export function ReverseMode(){
+    const [_old,set_old] = useState(0);
+    const [user] = useAuthState(auth);
+
     useEffect(() => {
         document.getElementById('noname').appendChild(document.getElementById('logo'));
     })
@@ -73,17 +79,28 @@ export function ReverseMode(){
 
     const [arr, setArr] = React.useState([]);
 
-    const [round ,setRound] = React.useState(0);
+    const [round ,setRound] = React.useState();
 
     const add = (value) =>{
         setArr(arr.concat(value))
     }
-    const handleClick = () => {
 
-        let c = get_colors(false);
+    const HandleClick = () => {
+        let _new;
+        const getOld = async(e) => {await firestore.collection('users').doc(user.uid).get().then((doc) => {
+            set_old(doc.data()['bestScoreR']) ;
+        })}
+        const Handle0 = () => {firestore.collection('users').doc(user.uid).get().then((doc) => {
+            const addd = () => {
+                firestore.collection('users').doc(user.uid).update({
+                    bestScoreR:numAverage(arr)
+                });
+            }
+            addd();
+        })};
+        let c = get_colors(true);
         let res = getResult(c[0],c[1],c[2])
         add(res);
-        console.log(arr);
 
         setColorToGuess(prevState => {
             return{
@@ -91,14 +108,17 @@ export function ReverseMode(){
             };
         });
 
-        if (round===0){
+        if (round<5){
             setRound(round+1);
         }else{
-            setRound(0);
+            _new = numAverage(arr);
+            getOld();
+            setRound(1);
+            if(_old < _new){Handle0();}
+            setArr([]);
         }
-
-
     };
+
 
     //this line is to set noname as a child of cp to ignore the change of the colorpicker without rewriting all the code
     useEffect(() => {
@@ -110,7 +130,7 @@ export function ReverseMode(){
                 <div id='noname'  style={{backgroundColor:colorToGuess.x}} />
             </div>
 
-            <button id='make-a-guess' className='false' onClick={handleClick} > MAKE A GUESS </button>
+            <button id='make-a-guess' className='false' onClick={HandleClick} > MAKE A GUESS </button>
             <p id='round-number' className='R'>ROUND : {round}/5</p>
             <p id='round-average' className='R'>ACCURACY : {numAverage(arr) || 0}  </p>
 

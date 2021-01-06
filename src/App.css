@@ -350,7 +350,7 @@ input[type=range]::-webkit-slider-thumb {
     z-index: 150;
     position: absolute;
     right:0px;
-    bottom:0px;
+    top:0px;
     margin: 20px;
     width: 200px;
     height: 50px;
@@ -367,4 +367,10 @@ input[type=range]::-webkit-slider-thumb {
 }
 .sign-out:hover{
     transform: scale(1.05,1.05);
+}
+
+#scoardboard{
+    z-index: 20005;
+    left: 0px;
+    position: absolute;
 }

@@ -5,7 +5,7 @@ import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import {Accordion, Card} from "react-bootstrap";
+import {Accordion, Card, ListGroup} from "react-bootstrap";
 
 firebase.initializeApp({
     apiKey: "AIzaSyC_q_AoIfegqVsC_aSwUPhHTCHGN3uhcC8",
@@ -49,57 +49,39 @@ export function SignOut() {
     )
 }
 
-export function UpdateBestScore(acc, mode){
-    const [user] = useAuthState(auth);
-    const addScore = () => {firestore.collection('users').doc(user.uid).get().then((doc) => {
-        if (mode){
-            if (!doc.exists){
-                const addd = () => {
-                    firestore.collection('users').doc(user.uid).set({bestScoreN:acc});
-                }
-                addd();
-            }
-        }else{
-            if (!doc.exists){
-                const addd = () => {
-                    firestore.collection('users').doc(user.uid).set({bestScoreR:acc});
-                }
-                addd();
-            }
-        }
-
-    })}
-    addScore();
-}
 
 export function ScoreBoard(props){
     let mode = props.mode;
-    const [user] = useAuthState(auth);
+
     const userRef = firestore.collection('users');
 
     let query;
     if (mode){
-        query = userRef.orderBy('bestScoreN').limit(10);
+        query = userRef.orderBy('bestScoreN', 'desc').limit(10);
     }else{
-        query = userRef.orderBy('bestScoreR').limit(10);
+        query = userRef.orderBy('bestScoreR', 'desc').limit(10);
     }
 
     const [bestScores] = useCollectionData(query, { idField: 'id' });
 
     return(
 
-    <Accordion defaultActiveKey="0">
+    <Accordion defaultActiveKey="0" id='scoardboard'>
         <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0">
                 SCOREBOARD
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
-                {bestScores && bestScores.map(ele => <Scores mode={mode} key={ele.id} bestScores={ele} />)}
+                <Card.Body>
+                <ListGroup>
+                    {bestScores && bestScores.map(ele => <Scores mode={mode} key={ele.id} bestScores={ele} />)}
+                </ListGroup>
+                </Card.Body>
             </Accordion.Collapse>
         </Card>
 
     </Accordion>
-    )
+    );
 
 
 }
@@ -108,11 +90,12 @@ function Scores (props) {
     const mode = props.mode;
     if(mode){
         return (
-            <Card.Body>{name} : {bestScoreN}</Card.Body>
+            <ListGroup.Item>{name} : {bestScoreN}</ListGroup.Item>
+
         )
     }else{
         return (
-            <Card.Body>{name} : {bestScoreR}</Card.Body>
+            <ListGroup.Item>{name} : {bestScoreR}o</ListGroup.Item>
         )
     }
 

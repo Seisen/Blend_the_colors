@@ -7,8 +7,8 @@ import {ReverseMode} from "./ReverseMode";
 
 import firebase from "firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
-import {SignOut} from "./Scoreboard";
 
+import {SignOut} from './Scoreboard';
 import {AccueilPage, EnterName} from "./AccueilPage";
 import {useState} from "react";
 const firestore = firebase.firestore();
@@ -50,6 +50,7 @@ function App() {
 
     return(
         <>
+
             {user ? <SignOut /> : <AccueilPage/>}
             {name_exist ? null : <EnterName/>}
 

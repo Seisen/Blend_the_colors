@@ -5,16 +5,23 @@ import {hslToRgb} from "./hslToRgbf";
 import{get_colors, numAverage} from "./Rounds";
 import{getResult} from "./BlendColors";
 import '@radial-color-picker/react-color-picker/dist/react-color-picker.min.css';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
+import {useAuthState} from "react-firebase-hooks/auth";
+import firebase from "firebase";
+import {ScoreBoard} from "./Scoreboard";
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 
 
 export function NormalMode(){
+    const [_old,set_old] = useState(0);
+    const [user] = useAuthState(auth);
     useEffect(() => {
         document.getElementsByClassName('rcp__well')[0].appendChild(document.getElementById('logo'));
     })
 
-    const [round ,setRound] = React.useState(0);
+    const [round ,setRound] = React.useState(1);
     const [color, setColor] = React.useState({
         hue: 90,
         saturation: 100,
@@ -57,8 +64,19 @@ export function NormalMode(){
     const add = (value) =>{
         setArr(arr.concat(value))
     }
-    const handleClick = () => {
-
+    const HandleClick = () => {
+        let _new;
+        const getOld = async(e) => {await firestore.collection('users').doc(user.uid).get().then((doc) => {
+             set_old(doc.data()['bestScoreN']) ;
+        })}
+        const Handle0 = () => {firestore.collection('users').doc(user.uid).get().then((doc) => {
+            const addd = () => {
+                firestore.collection('users').doc(user.uid).update({
+                    bestScoreN:numAverage(arr)
+                });
+            }
+            addd();
+        })};
         let c = get_colors(true);
         let res = getResult(c[0],c[1],c[2])
         add(res);
@@ -72,15 +90,19 @@ export function NormalMode(){
         if (round<5){
             setRound(round+1);
         }else{
-            setRound(0);
+            _new = numAverage(arr);
+            getOld();
+            setRound(1);
+            if(_old < _new){Handle0();}
+            setArr([]);
         }
-
-
     };
 
     return (
         <>
-            <button id='make-a-guess' className='true' onClick={handleClick} > MAKE A GUESS  </button>
+            <ScoreBoard mode={true}/>
+
+            <button id='make-a-guess' className='true' onClick={HandleClick} > MAKE A GUESS  </button>
             <p id='round-number' className='N'>ROUND : {round}/5  </p>
             <p id='round-average' className='N'>ACCURACY : {numAverage(arr) || 0}  </p>
 
