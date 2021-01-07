@@ -9,6 +9,7 @@ import {getResult} from "./BlendColors";
 import {useEffect, useState} from "react";
 import {useAuthState} from "react-firebase-hooks/auth";
 import firebase from "firebase";
+import {ScoreBoard} from "./Scoreboard";
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
@@ -79,7 +80,7 @@ export function ReverseMode(){
 
     const [arr, setArr] = React.useState([]);
 
-    const [round ,setRound] = React.useState();
+    const [round ,setRound] = React.useState(1);
 
     const add = (value) =>{
         setArr(arr.concat(value))
@@ -98,7 +99,7 @@ export function ReverseMode(){
             }
             addd();
         })};
-        let c = get_colors(true);
+        let c = get_colors(false);
         let res = getResult(c[0],c[1],c[2])
         add(res);
 
@@ -129,11 +130,12 @@ export function ReverseMode(){
             <div  >
                 <div id='noname'  style={{backgroundColor:colorToGuess.x}} />
             </div>
-
+            <ScoreBoard mode={false} />
             <button id='make-a-guess' className='false' onClick={HandleClick} > MAKE A GUESS </button>
-            <p id='round-number' className='R'>ROUND : {round}/5</p>
-            <p id='round-average' className='R'>ACCURACY : {numAverage(arr) || 0}  </p>
-
+            <div id='p-conteneur'>
+                <p id='round-number' className='R'>ROUND : {round}/5  </p>
+                <p id='round-average' className='R'>ACCURACY : {numAverage(arr) || 0}  </p>
+            </div>
 
             <div id='back'>
                 <div  style={{

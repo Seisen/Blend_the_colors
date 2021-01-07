@@ -5,7 +5,8 @@ import 'firebase/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import {Accordion, Card, ListGroup} from "react-bootstrap";
+import {Accordion, Button, Card, ListGroup, Overlay} from "react-bootstrap";
+import {useRef, useState} from "react";
 
 firebase.initializeApp({
     apiKey: "AIzaSyC_q_AoIfegqVsC_aSwUPhHTCHGN3uhcC8",
@@ -32,9 +33,7 @@ export function SignIn() {
         const provider = new firebase.auth.FacebookAuthProvider();
         auth.signInWithPopup(provider);
 
-
     }
-
     return(
         <>
             <button className="sign-in t" onClick={SignInWithGoogle}>Sign in with google</button>
@@ -42,9 +41,9 @@ export function SignIn() {
         </>
     );
 }
-export function SignOut() {
+export function SignOut(props) {
     return auth.currentUser && (
-        <button  className="sign-out" onClick={() => auth.signOut()}>SIGN OUT</button>
+        <button  className={"sign-out"+props.mode}  onClick={() => auth.signOut()}>SIGN OUT</button>
 
     )
 }
@@ -64,23 +63,31 @@ export function ScoreBoard(props){
 
     const [bestScores] = useCollectionData(query, { idField: 'id' });
 
+    const [show, setShow] = useState(false);
+    const target = useRef(null);
     return(
 
-    <Accordion defaultActiveKey="0" id='scoardboard'>
-        <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="0">
-                SCOREBOARD
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
-                <Card.Body>
-                <ListGroup>
-                    {bestScores && bestScores.map(ele => <Scores mode={mode} key={ele.id} bestScores={ele} />)}
-                </ListGroup>
-                </Card.Body>
-            </Accordion.Collapse>
-        </Card>
+    <div  id='scoardboard' >
+        <Button id={'sc-btn'+mode} ref={target} onClick={() => setShow(!show)}>
+            SCOREBOARD
+        </Button>
+        <Overlay id='sc-ovl' target={target.current} show={show} placement="bottom">
+            {({ placement, arrowProps, show: _show, popper, ...props }) => (
+                <div
+                    {...props}
+                    style={{
+                        ...props.style,
+                        zIndex:"5000",
+                    }}
+                >
+                    <ListGroup id='listgroup'>
+                        {bestScores && bestScores.map(ele => <Scores mode={mode} key={ele.id} bestScores={ele} />)}
+                    </ListGroup>
+                </div>
+            )}
+        </Overlay>
 
-    </Accordion>
+    </div>
     );
 
 
@@ -95,7 +102,7 @@ function Scores (props) {
         )
     }else{
         return (
-            <ListGroup.Item>{name} : {bestScoreR}o</ListGroup.Item>
+            <ListGroup.Item>{name} : {bestScoreR}</ListGroup.Item>
         )
     }
 

@@ -29,9 +29,9 @@ function App() {
             firestore.collection('users').doc(user.uid).set({name:"",
                 bestScoreN:0,bestScoreR:0
             });
-        }
+        };
         addd();
-    })};
+    });};
     try{
 
         const getCA = () => {firestore.collection('users').doc(user.uid).get().then((doc) => {
@@ -41,7 +41,7 @@ function App() {
             }else{
                 setNameExist(doc.data()['name'] !== "");
             }
-        })}
+        });};
         getCA();
 
     }catch (e){
@@ -51,7 +51,7 @@ function App() {
     return(
         <>
 
-            {user ? <SignOut /> : <AccueilPage/>}
+            {user ? <SignOut mode={normalmode} /> : <AccueilPage/>}
             {name_exist ? null : <EnterName/>}
 
             <button className={normalmode.toString()} id='changeMode'  onClick={handleClick}>CHANGE MODE</button>
@@ -60,6 +60,6 @@ function App() {
 
         </>
     );
-};
+}
 
 export default App;

@@ -5,6 +5,8 @@
 html{
     overflow: hidden;
     user-select: none;
+    margin-right: 0;
+    padding: 0;
 
 }
 #saturationInput,#luminosityInput{
@@ -191,17 +193,23 @@ input[type=range]::-webkit-slider-thumb {
     height: 100%;
     pointer-events: none
 }
-#round-number,#round-average{
+#p-conteneur{
+    width: 30vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
     position: absolute;
+    top: 6.5%;
+}
+#round-number,#round-average{
+
     font-family: ME;
-    top: 0px;
-    font-size: 27px;
+
+    font-size: 18px;
     z-index:15;
 
 }
-#round-average{
-    top: 40px !important;
-}
+
 #round-number.R,#round-average.R{
     color: black;
 
@@ -216,7 +224,7 @@ input[type=range]::-webkit-slider-thumb {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 50;
+    z-index: 500;
     color: hsla(324, 70%, 45%,.8);
     animation: wheelHueColor 20s infinite;
     background-color: currentColor;
@@ -346,11 +354,11 @@ input[type=range]::-webkit-slider-thumb {
 
     transform: scale(1.05,1.05);
 }
-.sign-out{
+.sign-outtrue,.sign-outfalse{
     z-index: 150;
     position: absolute;
     right:0px;
-    top:0px;
+    bottom:0px;
     margin: 20px;
     width: 200px;
     height: 50px;
@@ -362,15 +370,65 @@ input[type=range]::-webkit-slider-thumb {
     color: white;
     border: 2px dashed white;
 }
+.sign-outfalse{
+    color: black;
+    border: 2px dashed black;
+}
 .sign-out:focus{
     outline: none;
 }
 .sign-out:hover{
     transform: scale(1.05,1.05);
 }
-
 #scoardboard{
-    z-index: 20005;
-    left: 0px;
+
     position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    top: 0px;
+}
+#scoardboard.false button{
+    color: black;
+    border: 2px dashed black;
+}
+#sc-btntrue,#sc-btnfalse{
+
+    z-index: 150;
+    margin-top: 10px;
+    width: 300px;
+    height: 50px;
+    background: transparent;
+    font-family: ME;
+    font-size: 29px;
+    transition:  0.2s;
+    cursor: pointer;
+}
+#sc-btntrue{
+    color: white;
+    border: 2px dashed white;
+}
+#sc-btnfalse{
+    color: black;
+    border: 2px dashed black;}
+
+#sc-btntrue:hover,#sc-btnfalse:hover{
+    transform: scale(1.05,1.05);
+}
+#sc-btntrue:focus,#sc-btnfalse:focus{
+    outline: none;
+}
+.fade.show{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    position: absolute;
+    right: 0px !important;
+    position: absolute;
+    z-index: 50!important;
+    transform: translate(0px, 0px) !important;
+}
+#accueil.d{
+    z-index:501;
 }

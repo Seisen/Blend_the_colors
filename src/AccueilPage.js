@@ -7,7 +7,7 @@ import {useState} from "react";
 export function AccueilPage(){
     return(
 
-        <div id='accueil' >
+        <div id='accueil' className='d' >
             <div id='lg'/>
             <SignIn/>
 

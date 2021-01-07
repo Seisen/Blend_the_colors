@@ -103,8 +103,11 @@ export function NormalMode(){
             <ScoreBoard mode={true}/>
 
             <button id='make-a-guess' className='true' onClick={HandleClick} > MAKE A GUESS  </button>
-            <p id='round-number' className='N'>ROUND : {round}/5  </p>
-            <p id='round-average' className='N'>ACCURACY : {numAverage(arr) || 0}  </p>
+            <div id='p-conteneur'>
+                <p id='round-number' className='N'>ROUND : {round}/5  </p>
+                <p id='round-average' className='N'>ACCURACY : {numAverage(arr) || 0}  </p>
+            </div>
+
 
             <div id='back'>
                 <div className='leftb' style={{
