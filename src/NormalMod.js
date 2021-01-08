@@ -14,7 +14,9 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 
-export function NormalMode(){
+export function NormalMode(props){
+    const id = props.id;
+
     const [_old,set_old] = useState(0);
     const [user] = useAuthState(auth);
     useEffect(() => {
@@ -97,11 +99,11 @@ export function NormalMode(){
             setArr([]);
         }
     };
-
+    //
     return (
         <>
-            <ScoreBoard mode={true}/>
 
+            {id ?  <ScoreBoard mode={true} id={id}/> : null}
             <button id='make-a-guess' className='true' onClick={HandleClick} > MAKE A GUESS  </button>
             <div id='p-conteneur'>
                 <p id='round-number' className='N'>ROUND : {round}/5  </p>

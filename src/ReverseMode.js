@@ -13,7 +13,9 @@ import {ScoreBoard} from "./Scoreboard";
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
-export function ReverseMode(){
+export function ReverseMode(props){
+    const id = props.id;
+
     const [_old,set_old] = useState(0);
     const [user] = useAuthState(auth);
 
@@ -125,12 +127,13 @@ export function ReverseMode(){
     useEffect(() => {
         document.getElementById('cp').appendChild(document.getElementById('noname'));
     })
+    //
     return (
         <>
+            {id ?  <ScoreBoard mode={false} id={id} /> : null}
             <div  >
                 <div id='noname'  style={{backgroundColor:colorToGuess.x}} />
             </div>
-            <ScoreBoard mode={false} />
             <button id='make-a-guess' className='false' onClick={HandleClick} > MAKE A GUESS </button>
             <div id='p-conteneur'>
                 <p id='round-number' className='R'>ROUND : {round}/5  </p>

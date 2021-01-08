@@ -6,7 +6,8 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import {Accordion, Button, Card, ListGroup, Overlay} from "react-bootstrap";
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
+import * as React from "react";
 
 firebase.initializeApp({
     apiKey: "AIzaSyC_q_AoIfegqVsC_aSwUPhHTCHGN3uhcC8",
@@ -48,23 +49,57 @@ export function SignOut(props) {
     )
 }
 
+/*
+function GetSb(mode,id){
+
+    getAtt(mode,id).then((value => {setL(value)}));
+    console.log(l,"2222");
+    const [onTop] = useCollectionData(l[4], { idField: 'id' });
+    const [bestScores] = useCollectionData(l[3].limit(10), { idField: 'id' });
+    return [onTop.length,l[2],l[1],l[0],bestScores]
+}*/
 
 export function ScoreBoard(props){
     let mode = props.mode;
+    let id = props.id;
 
     const userRef = firestore.collection('users');
+    const [att,setAtt]=useState([0,0,"ss"]);
+
+    useEffect(() => {
+        firestore.collection('users').doc(id).get().then((doc) => {
+            setAtt([
+                doc.data()['bestScoreR'],
+                doc.data()['bestScoreN'],
+                doc.data()['name']
+            ])
+        });
+    },id
+    )
 
     let query;
+    let query2;
+
     if (mode){
         query = userRef.orderBy('bestScoreN', 'desc').limit(10);
+        query2 = userRef.where("bestScoreN", ">", att[1]);
     }else{
         query = userRef.orderBy('bestScoreR', 'desc').limit(10);
+        query2 = userRef.where("bestScoreR", ">", att[0]);
     }
 
     const [bestScores] = useCollectionData(query, { idField: 'id' });
+    const [onTop] = useCollectionData(query2);
+    let place;
+    try{
+        place = onTop.length;
+    }catch (e){
+        //pass
+    }
 
     const [show, setShow] = useState(false);
     const target = useRef(null);
+
     return(
 
     <div  id='scoardboard' >
@@ -80,8 +115,9 @@ export function ScoreBoard(props){
                         zIndex:"5000",
                     }}
                 >
-                    <ListGroup id='listgroup'>
-                        {bestScores && bestScores.map(ele => <Scores mode={mode} key={ele.id} bestScores={ele} />)}
+                    <ListGroup id='listgroup' >
+                        {bestScores && bestScores.map((ele,index) => <Scores i={index} mode={mode} key={ele.id} bestScores={ele} />)}
+                        {mode ? <ListGroup.Item  className='u' id='list-items2'><p>#{place+1}</p><p>{att[2]}</p>  <p>{att[1]}%</p></ListGroup.Item> :  <ListGroup.Item className='u' id='list-items'><p>#{place+1}</p><p>{att[2]}</p>  <p>{att[0]}%</p></ListGroup.Item>}
                     </ListGroup>
                 </div>
             )}
@@ -91,18 +127,20 @@ export function ScoreBoard(props){
     );
 
 
+
 }
 function Scores (props) {
-    const { name, bestScoreN, bestScoreR  } = props.bestScores;
+    const { name, bestScoreN, bestScoreR } = props.bestScores;
     const mode = props.mode;
+    const i = props.i+1;
     if(mode){
         return (
-            <ListGroup.Item>{name} : {bestScoreN}</ListGroup.Item>
+            <ListGroup.Item  id='list-items2'><p>#{i}</p><p>{name}</p>  <p>{bestScoreN}%</p></ListGroup.Item>
 
         )
     }else{
         return (
-            <ListGroup.Item>{name} : {bestScoreR}</ListGroup.Item>
+            <ListGroup.Item id='list-items'><p>#{i}</p><p>{name}</p>  <p>{bestScoreR}%</p></ListGroup.Item>
         )
     }
 

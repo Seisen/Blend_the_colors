@@ -17,7 +17,9 @@ const auth = firebase.auth();
 function App() {
     const [normalmode,setmode] = React.useState(true);
     const [user] = useAuthState(auth);
-
+    console.log("pls");
+    let id;
+    if(user)id=user.uid;
     const handleClick = () => {
 
         setmode(prevState => {return(!prevState)})
@@ -40,6 +42,7 @@ function App() {
                 setNameExist(false);
             }else{
                 setNameExist(doc.data()['name'] !== "");
+
             }
         });};
         getCA();
@@ -56,10 +59,10 @@ function App() {
 
             <button className={normalmode.toString()} id='changeMode'  onClick={handleClick}>CHANGE MODE</button>
 
-            {normalmode ? <NormalMode  /> : <ReverseMode/>}
+            {normalmode ? <NormalMode  id={id} /> : <ReverseMode id={id} />}
+
 
         </>
     );
-}
-
+};
 export default App;

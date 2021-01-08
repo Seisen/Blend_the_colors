@@ -424,11 +424,44 @@ input[type=range]::-webkit-slider-thumb {
     flex-direction: column;
     width: 100px;
     position: absolute;
-    right: 0px !important;
+    right: 10px !important;
     position: absolute;
     z-index: 50!important;
     transform: translate(0px, 0px) !important;
+
 }
 #accueil.d{
     z-index:501;
+}
+#listgroup{
+
+    left: 85.5vw !important;
+    width: 13vw;
+    top: 1vw;
+    position: absolute;
+}
+#list-items,#list-items2{
+    height: 20px;
+    line-height: 20px;
+    border-bottom: 1px dashed black;
+    width: 100%;
+    font-family: ME;
+    align-items: center;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}#list-items p{
+     height: 20px;
+
+ }
+ #list-items.u,#list-items2.u{
+     border-bottom: none;
+     transform: scale(1.05,1.05);
+ }
+#list-items2{
+    border-bottom: 1px dashed white;
+    color: white;
+
 }
