@@ -4,12 +4,49 @@
     <list default="true" id="ca72f37f-8354-44eb-a79b-bb98090e1d14" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tutorial.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tutorial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/acc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/acc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/accR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/accR.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/btcR.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/click here.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/click here.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/click hereR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/click hererR.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/lumi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/mag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/mag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/mag2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/mag2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/mag2R.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/mag2R.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/magR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/magR.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/round.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/roundR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/roundR.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard2R.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard2R.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboardR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboardR.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/try.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/try.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/tryR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/tryR.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/wheel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/wheel.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svgs/wheel.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +117,7 @@
       <workItem from="1609919633941" duration="9218000" />
       <workItem from="1609971471488" duration="5490000" />
       <workItem from="1610028375292" duration="22914000" />
-      <workItem from="1610140491308" duration="10344000" />
+      <workItem from="1610140491308" duration="14956000" />
     </task>
     <servers />
   </component>

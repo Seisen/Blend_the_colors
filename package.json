@@ -13,10 +13,9 @@
     "@radial-color-picker/react-color-picker": "",
     "react-bootstrap": "^1.4.0",
     "randomcolor": "^0.6.2",
-
+    "react-sticky-mouse-tooltip": "^0.0.1",
     "firebase": "^8.2.1",
     "react-firebase-hooks": "^2.2.0"
-
   },
   "scripts": {
     "start": "react-scripts start",

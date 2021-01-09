@@ -7,6 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import {SignOut} from './Scoreboard';
 import {AccueilPage, EnterName} from "./AccueilPage";
 import {useState} from "react";
+import {TutorialN, TutorialR} from "./Tutorial";
 const firestore = firebase.firestore();
 const auth = firebase.auth();
 
@@ -44,6 +45,7 @@ function App() {
     let page_principal = user && name_exist;
     return(
         <>
+
             {page_principal ? <SignOut mode={normalmode} /> : <AccueilPage/>}
             {name_exist ? null : <EnterName/>}
             <button className={normalmode.toString()} id='changeMode'  onClick={handleClick}>CHANGE MODE</button>
@@ -58,7 +60,10 @@ function PagePrincipal(props){
 
     if(page_principal){
         return(<>
+
             {normalmode ? <NormalMode  id={id} /> : <ReverseMode id={id} />}
+            {normalmode ? <TutorialN/> : <TutorialR/>}
+
             </>
         )
     }else{
