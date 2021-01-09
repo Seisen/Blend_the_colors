@@ -4,12 +4,12 @@
     <list default="true" id="ca72f37f-8354-44eb-a79b-bb98090e1d14" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NormalMod.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalMod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReverseMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReverseMode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scoreboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +49,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jochi\blend_the_colors\public" />
       <recent name="C:\Users\jochi\blend_the_colors\src" />
     </key>
   </component>
@@ -79,7 +80,7 @@
       <workItem from="1609919633941" duration="9218000" />
       <workItem from="1609971471488" duration="5490000" />
       <workItem from="1610028375292" duration="22914000" />
-      <workItem from="1610140491308" duration="8473000" />
+      <workItem from="1610140491308" duration="10344000" />
     </task>
     <servers />
   </component>
