@@ -8,45 +8,11 @@
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BlendColors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlendColors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NormalMod.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalMod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReverseMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReverseMode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scoreboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tutorial.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tutorial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/acc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/acc.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/accR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/accR.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/btcR.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/click here.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/click here.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/click hereR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/click hererR.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/lumi.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/mag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/mag.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/mag2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/mag2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/mag2R.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/mag2R.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/magR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/magR.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/round.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/roundR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/roundR.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard2R.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboard2R.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboardR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/scoreboardR.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/try.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/try.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/tryR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/tryR.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/wheel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/wheel.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svgs/wheel.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +52,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jochi\blend_the_colors\public" />
       <recent name="C:\Users\jochi\blend_the_colors\src" />
+      <recent name="C:\Users\jochi\blend_the_colors\public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -117,7 +83,11 @@
       <workItem from="1609919633941" duration="9218000" />
       <workItem from="1609971471488" duration="5490000" />
       <workItem from="1610028375292" duration="22914000" />
-      <workItem from="1610140491308" duration="14956000" />
+      <workItem from="1610140491308" duration="17404000" />
+      <workItem from="1610219324953" duration="3000" />
+      <workItem from="1610220259486" duration="1174000" />
+      <workItem from="1610230892703" duration="2061000" />
+      <workItem from="1610289488457" duration="8423000" />
     </task>
     <servers />
   </component>
@@ -135,17 +105,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Scoreboard.js</url>
-          <line>52</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

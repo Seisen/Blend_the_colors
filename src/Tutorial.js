@@ -73,7 +73,7 @@ export function TutorialR(){
                     <div id='arrow2' className='r' />
                     <div id='arrow3' className='r' />
                     <p id='texteTuto1' className='r'>Now find this color !</p>
-                    <p id='texteTuto2' className='r'>Choose here !</p>
+                    <p id='texteTuto2' className='r'>Choose there !</p>
 
                 </div>
             </>

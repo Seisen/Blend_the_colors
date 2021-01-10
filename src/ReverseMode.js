@@ -10,6 +10,8 @@ import {useEffect, useState} from "react";
 import {useAuthState} from "react-firebase-hooks/auth";
 import firebase from "firebase";
 import {ScoreBoard} from "./Scoreboard";
+import {confirmAlert} from "react-confirm-alert";
+import {MakeAGuessHandle} from "./MakeAGuessHandle";
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
@@ -87,8 +89,31 @@ export function ReverseMode(props){
     const add = (value) =>{
         setArr(arr.concat(value))
     }
+    const HandleClick = ()=>{
+        let c = get_colors(false);
+        let res = getResult(c[0],c[1],c[2])
+        confirmAlert({
+            afterClose: () => {UpdateRound(res);},
+            customUI: ({ onClose }) => {
+                return (
+                    <div className='custom-ui reverse'>
+                        <MakeAGuessHandle c0={c[0]} c1={c[1]} c2={c[2]} res={res} mode={false}/>
+                        <button
+                            id='mag-handler-btn' className='reverse'
+                            onClick={() => {
+                                UpdateRound(res);
+                                onClose();
+                            }}
+                        >
+                            Continue
+                        </button>
+                    </div>
+                );
+            }
+        });
+    }
 
-    const HandleClick = () => {
+    const UpdateRound = (res) => {
         let _new;
         const getOld = async(e) => {await firestore.collection('users').doc(user.uid).get().then((doc) => {
             set_old(doc.data()['bestScoreR']) ;
@@ -101,8 +126,6 @@ export function ReverseMode(props){
             }
             addd();
         })};
-        let c = get_colors(false);
-        let res = getResult(c[0],c[1],c[2])
         add(res);
 
         setColorToGuess(prevState => {

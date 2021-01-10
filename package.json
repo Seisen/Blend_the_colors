@@ -15,7 +15,9 @@
     "randomcolor": "^0.6.2",
     "react-sticky-mouse-tooltip": "^0.0.1",
     "firebase": "^8.2.1",
-    "react-firebase-hooks": "^2.2.0"
+    "react-firebase-hooks": "^2.2.0",
+    "react-confirm-alert": "^2.6.2",
+    "color-blend": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

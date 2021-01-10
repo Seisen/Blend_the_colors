@@ -12,6 +12,7 @@ const firestore = firebase.firestore();
 const auth = firebase.auth();
 
 function App() {
+
     const [normalmode,setmode] = React.useState(true);
     const [user] = useAuthState(auth);
     let id;

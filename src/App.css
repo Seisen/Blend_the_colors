@@ -537,3 +537,80 @@ input[type=range]::-webkit-slider-thumb {
     top: 50%;
     font-size: 2.2rem;
 }
+
+
+#MAG-alert{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+}
+.mag-res{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.mag-color{
+    display: flex;
+    height: 50px;
+
+    align-self: center;
+    width: 50px;
+    border-radius: 50%;
+}
+.mag-res p{
+    display: flex;
+    font-family: ME;
+    font-size: 30px;
+}
+.custom-ui h1{
+    text-align: center;
+    font-family: ME;
+    font-size: 25px;
+    border-bottom: 2px dashed rgba(250,250,250,0.5);
+}
+.custom-ui.reverse h1{
+    border-bottom: 2px dashed rgba(0,0,0,0.5);
+}
+.react-confirm-alert-overlay{
+    background: rgba(0,0,0,.8) !important;
+
+
+    z-index: 200;
+}
+
+.custom-ui{
+    background: rgba(0,0,0,.3) !important;
+    padding: 30px;
+
+    border-radius: 10px;
+}
+.custom-ui.reverse{
+    background: rgba(250,250,250,.6) !important;
+}
+#mag-handler-btn{
+    width:100%;
+    height: 40px;
+    color: white;
+    background: transparent;
+    font-family: ME;
+    font-size: 25px;
+    border: 2px dashed white;
+    cursor: pointer;
+    transition: .2s;
+    pointer-events: auto;
+}
+#mag-handler-btn.reverse{
+    border: 2px dashed black;
+    color: black;
+}
+#mag-handler-btn:hover{
+    transform: scale(1.05,1.05);
+}
+h3{
+    align-self: center;
+    font-family: ME;
+}

@@ -49,16 +49,6 @@ export function SignOut(props) {
     )
 }
 
-/*
-function GetSb(mode,id){
-
-    getAtt(mode,id).then((value => {setL(value)}));
-    console.log(l,"2222");
-    const [onTop] = useCollectionData(l[4], { idField: 'id' });
-    const [bestScores] = useCollectionData(l[3].limit(10), { idField: 'id' });
-    return [onTop.length,l[2],l[1],l[0],bestScores]
-}*/
-
 export function ScoreBoard(props){
     let mode = props.mode;
     let id = props.id;
@@ -112,7 +102,7 @@ export function ScoreBoard(props){
                     {...props}
                     style={{
                         ...props.style,
-                        zIndex:"5000",
+
                     }}
                 >
                     <ListGroup id='listgroup' >

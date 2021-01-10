@@ -6,12 +6,15 @@ import{get_colors, numAverage} from "./Rounds";
 import{getResult} from "./BlendColors";
 import '@radial-color-picker/react-color-picker/dist/react-color-picker.min.css';
 import {useEffect, useState} from "react";
-
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import {useAuthState} from "react-firebase-hooks/auth";
 import firebase from "firebase";
 import {ScoreBoard} from "./Scoreboard";
+import {MakeAGuessHandle} from "./MakeAGuessHandle";
 const auth = firebase.auth();
 const firestore = firebase.firestore();
+
 
 
 export function NormalMode(props){
@@ -66,7 +69,31 @@ export function NormalMode(props){
     const add = (value) =>{
         setArr(arr.concat(value))
     }
-    const HandleClick = () => {
+    const HandleClick = ()=>{
+
+        let c = get_colors(true);
+        let res = getResult(c[0],c[1],c[2])
+        confirmAlert({
+            afterClose: () => {UpdateRound(res);},
+            customUI: ({ onClose }) => {
+                return (
+                    <div className='custom-ui'>
+                        <MakeAGuessHandle c0={c[0]} c1={c[1]} c2={c[2]} res={res} mode={true}/>
+                        <button
+                            id='mag-handler-btn'
+                            onClick={() => {
+                                UpdateRound(res);
+                                onClose();
+                            }}
+                        >
+                            Continue
+                        </button>
+                    </div>
+                );
+            }
+        });
+    }
+    const UpdateRound = (res) => {
         let _new;
         const getOld = async(e) => {await firestore.collection('users').doc(user.uid).get().then((doc) => {
              set_old(doc.data()['bestScoreN']) ;
@@ -79,8 +106,7 @@ export function NormalMode(props){
             }
             addd();
         })};
-        let c = get_colors(true);
-        let res = getResult(c[0],c[1],c[2])
+
         add(res);
 
         setBackcolor(prevState => {
@@ -104,7 +130,13 @@ export function NormalMode(props){
         <>
 
             {id ?  <ScoreBoard mode={true} id={id}/> : null}
+
             <button id='make-a-guess' className='true' onClick={HandleClick} > MAKE A GUESS  </button>
+
+
+
+
+
             <div id='p-conteneur'>
                 <p id='round-number' className='N'>ROUND : {round}/5  </p>
                 <p id='round-average' className='N'>ACCURACY : {numAverage(arr) || 0}  </p>
