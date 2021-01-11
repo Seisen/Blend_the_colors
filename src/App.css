@@ -355,7 +355,7 @@ input[type=range]::-webkit-slider-thumb {
     transform: scale(1.05,1.05);
 }
 .sign-outtrue,.sign-outfalse{
-    z-index: 150;
+    z-index: 50;
     position: absolute;
     right:0px;
     bottom:0px;
@@ -394,7 +394,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 #sc-btntrue,#sc-btnfalse{
 
-    z-index: 150;
+    z-index: 50;
     margin-top: 10px;
     width: 300px;
     height: 50px;

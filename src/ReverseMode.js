@@ -11,7 +11,7 @@ import {useAuthState} from "react-firebase-hooks/auth";
 import firebase from "firebase";
 import {ScoreBoard} from "./Scoreboard";
 import {confirmAlert} from "react-confirm-alert";
-import {MakeAGuessHandle} from "./MakeAGuessHandle";
+import {MakeAGuessHandle, RecapGame} from "./MakeAGuessHandle";
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
@@ -83,17 +83,19 @@ export function ReverseMode(props){
     const [right, setRight] = React.useState(null);
 
     const [arr, setArr] = React.useState([]);
+    const [histArr, setHistArr] = React.useState([]);
 
     const [round ,setRound] = React.useState(1);
 
-    const add = (value) =>{
+    const add = (value,value2) =>{
         setArr(arr.concat(value))
+        setHistArr(histArr.concat(value2))
     }
     const HandleClick = ()=>{
         let c = get_colors(false);
         let res = getResult(c[0],c[1],c[2])
         confirmAlert({
-            afterClose: () => {UpdateRound(res);},
+            afterClose: () => {UpdateRound(res,c);},
             customUI: ({ onClose }) => {
                 return (
                     <div className='custom-ui reverse'>
@@ -101,7 +103,6 @@ export function ReverseMode(props){
                         <button
                             id='mag-handler-btn' className='reverse'
                             onClick={() => {
-                                UpdateRound(res);
                                 onClose();
                             }}
                         >
@@ -113,20 +114,9 @@ export function ReverseMode(props){
         });
     }
 
-    const UpdateRound = (res) => {
-        let _new;
-        const getOld = async(e) => {await firestore.collection('users').doc(user.uid).get().then((doc) => {
-            set_old(doc.data()['bestScoreR']) ;
-        })}
-        const Handle0 = () => {firestore.collection('users').doc(user.uid).get().then((doc) => {
-            const addd = () => {
-                firestore.collection('users').doc(user.uid).update({
-                    bestScoreR:numAverage(arr)
-                });
-            }
-            addd();
-        })};
-        add(res);
+    const UpdateRound = (res,c) => {
+
+        add(res,c);
 
         setColorToGuess(prevState => {
             return{
@@ -134,16 +124,39 @@ export function ReverseMode(props){
             };
         });
 
-        if (round<5){
+        if (round<=5){
             setRound(round+1);
-        }else{
-            _new = numAverage(arr);
-            getOld();
-            setRound(1);
-            if(_old < _new){Handle0();}
-            setArr([]);
         }
     };
+    const getOld = async(e) => {await firestore.collection('users').doc(user.uid).get().then((doc) => {
+        set_old(doc.data()['bestScoreR']) ;
+    })}
+    const Handle0 = () => {firestore.collection('users').doc(user.uid).get().then((doc) => {
+        const addd = () => {
+            firestore.collection('users').doc(user.uid).update({
+                bestScoreR:numAverage(arr)
+            });
+        }
+        addd();
+    })};
+    const gameEnded = () => {
+
+        let _new = numAverage(arr);
+        getOld();
+        setRound(1);
+
+        let new_BC = _old < _new;
+        if(new_BC){Handle0();}
+
+        RecapGame(histArr,_new,false,new_BC);
+        setArr([]);
+        setHistArr([]);
+    }
+    useEffect(() => {
+        if(round > 5){
+            gameEnded();
+        }
+    })
 
 
     //this line is to set noname as a child of cp to ignore the change of the colorpicker without rewriting all the code
