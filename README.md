@@ -8,7 +8,7 @@ It has no other goal than to progress.
 
 I used [npm-color-blend](https://www.npmjs.com/package/color-blend)  
 
-##Color picker
+## Color picker
 
 I used and modified [react-color-picker](https://github.com/radial-color-picker/react-color-picker)
 
