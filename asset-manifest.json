@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Blend_the_colors/static/css/main.ac82c613.chunk.css",
+    "main.js": "/Blend_the_colors/static/js/main.9357c160.chunk.js",
+    "main.js.map": "/Blend_the_colors/static/js/main.9357c160.chunk.js.map",
+    "runtime-main.js": "/Blend_the_colors/static/js/runtime-main.c7da3e18.js",
+    "runtime-main.js.map": "/Blend_the_colors/static/js/runtime-main.c7da3e18.js.map",
+    "static/css/2.0a74aa33.chunk.css": "/Blend_the_colors/static/css/2.0a74aa33.chunk.css",
+    "static/js/2.97bb5988.chunk.js": "/Blend_the_colors/static/js/2.97bb5988.chunk.js",
+    "static/js/2.97bb5988.chunk.js.map": "/Blend_the_colors/static/js/2.97bb5988.chunk.js.map",
+    "static/js/3.40ec932a.chunk.js": "/Blend_the_colors/static/js/3.40ec932a.chunk.js",
+    "static/js/3.40ec932a.chunk.js.map": "/Blend_the_colors/static/js/3.40ec932a.chunk.js.map",
+    "index.html": "/Blend_the_colors/index.html",
+    "static/css/2.0a74aa33.chunk.css.map": "/Blend_the_colors/static/css/2.0a74aa33.chunk.css.map",
+    "static/css/main.ac82c613.chunk.css.map": "/Blend_the_colors/static/css/main.ac82c613.chunk.css.map",
+    "static/js/2.97bb5988.chunk.js.LICENSE.txt": "/Blend_the_colors/static/js/2.97bb5988.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Blend_the_colors/static/media/flecheR.453f6c45.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c7da3e18.js",
+    "static/css/2.0a74aa33.chunk.css",
+    "static/js/2.97bb5988.chunk.js",
+    "static/css/main.ac82c613.chunk.css",
+    "static/js/main.9357c160.chunk.js"
+  ]
+}
