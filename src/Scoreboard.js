@@ -3,9 +3,8 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/analytics';
 
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import {Accordion, Button, Card, ListGroup, Overlay} from "react-bootstrap";
+import { Button, ListGroup, Overlay} from "react-bootstrap";
 import {useEffect, useRef, useState} from "react";
 import * as React from "react";
 
@@ -25,14 +24,17 @@ const firestore = firebase.firestore();
 
 export function SignIn() {
 
+
     const SignInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
         auth.signInWithPopup(provider);
+
 
     }
     const SignInWithFb = () => {
         const provider = new firebase.auth.FacebookAuthProvider();
         auth.signInWithPopup(provider);
+
 
     }
     return(

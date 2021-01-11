@@ -1,3 +1,79 @@
+# BLEND THE COLORS   
+
+This project is developed with react-app and firebase.  
+
+It has no other goal than to progress.  
+
+## Blending colors  
+
+I used [npm-color-blend](https://www.npmjs.com/package/color-blend)  
+
+##Color picker
+
+I used and modified [react-color-picker](https://github.com/radial-color-picker/react-color-picker)
+
+## Getting results  
+
+Credits to this repo [rgb-lab](https://github.com/antimatter15/rgb-lab).  
+
+It's using the __Delta E 101__ method.  
+
+<table>
+    <tbody>
+    <tr>
+        <th>Delta E</th>
+        <th>Perception</th>
+    </tr>
+    <tr>
+        <td>&lt;= 1.0</td>
+        <td>Not perceptible by human eyes.</td>
+    </tr>
+    <tr>
+        <td>1 - 2</td>
+        <td>Perceptible through close observation.</td>
+    </tr>
+    <tr>
+        <td>2 - 10</td>
+        <td>Perceptible at a glance.</td>
+    </tr>
+    <tr>
+        <td>11 - 49</td>
+        <td>Colors are more similar than opposite</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>Colors are exact opposite</td>
+    </tr>
+    </tbody>
+</table>
+
+By inverting this result you can get a score.
+
+[More informations...](http://zschuessler.github.io/DeltaE/learn/)
+
+
+# RULES
+
+## Normal mode
+
+You have two colors in the background and you have to find the exact mix of these two.
+
+## Reverse mode
+
+You have to find two colors that mixed together blend to the one in the center
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

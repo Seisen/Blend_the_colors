@@ -6,15 +6,43 @@ import firebase from "firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import {SignOut} from './Scoreboard';
 import {AccueilPage, EnterName} from "./AccueilPage";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {TutorialN, TutorialR} from "./Tutorial";
+import AlertTemplate from "react-alert-template-basic";
+import {transitions, positions, Provider as AlertProvider, useAlert} from 'react-alert'
+
 const firestore = firebase.firestore();
 const auth = firebase.auth();
 
-function App() {
+function App(){
+// optional configuration
+    const options = {
+        // you can also just use 'bottom center'
+        position: positions.BOTTOM_CENTER,
+        timeout: 5000,
+        offset: '30px',
+        // you can also just use 'scale'
+        transition: transitions.SCALE
+    }
+
+    return(
+        <AlertProvider template={AlertTemplate} {...options}>
+            <App2 />
+        </AlertProvider>
+    )
+
+}
+
+
+function App2() {
+    const alert = useAlert();
 
     const [normalmode,setmode] = React.useState(true);
     const [user] = useAuthState(auth);
+    useEffect(()=>{
+        alert.success("CONNECTED");
+    },user);
+
     let id;
     if(user)id=user.uid;
     const handleClick = () => {
@@ -44,11 +72,12 @@ function App() {
         //pass
     }
     let page_principal = user && name_exist;
+    let enter_name =  user && !name_exist;
     return(
         <>
 
-            {page_principal ? <SignOut mode={normalmode} /> : <AccueilPage/>}
-            {name_exist ? null : <EnterName/>}
+            {user ? <SignOut mode={normalmode} /> : <AccueilPage/>}
+            {enter_name ? <EnterName/> : null}
             <button className={normalmode.toString()} id='changeMode'  onClick={handleClick}>CHANGE MODE</button>
             <PagePrincipal page_principal={page_principal} id={id} normalmode={normalmode}/>
         </>

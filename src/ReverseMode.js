@@ -2,10 +2,10 @@ import randomColor from "randomcolor";
 import * as React from "react";
 import ColorPicker from "@radial-color-picker/react-color-picker";
 import {hslToRgb} from "./hslToRgbf";
-
+import { useAlert} from "react-alert";
 import '@radial-color-picker/react-color-picker/dist/react-color-picker.min.css';
 import {get_colors, numAverage} from "./Rounds";
-import {getResult} from "./BlendColors";
+import {getResult, reverseRoundValid} from "./BlendColors";
 import {useEffect, useState} from "react";
 import {useAuthState} from "react-firebase-hooks/auth";
 import firebase from "firebase";
@@ -16,6 +16,9 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 export function ReverseMode(props){
+    const alert = useAlert();
+
+
     const id = props.id;
 
     const [_old,set_old] = useState(0);
@@ -94,24 +97,35 @@ export function ReverseMode(props){
     const HandleClick = ()=>{
         let c = get_colors(false);
         let res = getResult(c[0],c[1],c[2])
-        confirmAlert({
-            afterClose: () => {UpdateRound(res,c);},
-            customUI: ({ onClose }) => {
-                return (
-                    <div className='custom-ui reverse'>
-                        <MakeAGuessHandle c0={c[0]} c1={c[1]} c2={c[2]} res={res} mode={false}/>
-                        <button
-                            id='mag-handler-btn' className='reverse'
-                            onClick={() => {
-                                onClose();
-                            }}
-                        >
-                            Continue
-                        </button>
-                    </div>
-                );
-            }
-        });
+        if (reverseRoundValid(c[0],c[1])){
+            confirmAlert({
+                afterClose: () => {UpdateRound(res,c);},
+                customUI: ({ onClose }) => {
+                    return (
+                        <div className='custom-ui reverse'>
+                            <MakeAGuessHandle c0={c[0]} c1={c[1]} c2={c[2]} res={res} mode={false}/>
+                            <button
+                                id='mag-handler-btn' className='reverse'
+                                onClick={() => {
+                                    onClose();
+                                }}
+                            >
+                                Continue
+                            </button>
+                        </div>
+                    );
+                }
+            });
+        }else{
+
+
+                alert.error("The colors you picked are too close!");
+
+
+
+
+        }
+
     }
 
     const UpdateRound = (res,c) => {

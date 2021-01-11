@@ -86,3 +86,11 @@ export function getResult(color1,color2,color0){
     return res
 
 }
+export function  reverseRoundValid(color0,color1){
+    let c0 = rgbaToList(color0);
+    let c1 = rgbaToList(color1);
+    let delta = deltaE([c1[0],c1[1],c1[2]],[c0[0],c0[1],c0[2]]);
+    let res = Math.abs(delta-100);
+    return res<70;
+
+}

@@ -4,10 +4,15 @@
     <list default="true" id="ca72f37f-8354-44eb-a79b-bb98090e1d14" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MakeAGuessHandle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MakeAGuessHandle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NormalMod.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalMod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AccueilPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AccueilPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BlendColors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlendColors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReverseMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReverseMode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rounds.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rounds.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scoreboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scoreboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +88,8 @@
       <workItem from="1610220259486" duration="1174000" />
       <workItem from="1610230892703" duration="2061000" />
       <workItem from="1610289488457" duration="8423000" />
-      <workItem from="1610358278660" duration="6304000" />
+      <workItem from="1610358278660" duration="7303000" />
+      <workItem from="1610371571496" duration="6168000" />
     </task>
     <servers />
   </component>
